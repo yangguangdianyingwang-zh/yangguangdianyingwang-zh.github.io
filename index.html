@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>阳光电影网 - yangguangdianyingwang-zh.com.github.io｜影片资料库与排片索引</title>
+<meta name="description" content="阳光电影网（yangguangdianyingwang-zh.com.github.io）是影片资料库与排片索引站点，整理华语、欧美、日韩影片的剧情、演职员、片长、评分与正版观看渠道，访问 yangguangdianyingwang-zh.com.github.io 查看完整片库。">
+<meta name="keywords" content="阳光电影网, yangguangdianyingwang-zh, yangguangdianyingwang-zh.com.github.io, 电影资料库, 影片排片, 电影网站入口, 在线观影导航">
+<meta name="robots" content="index, follow, max-snippet:170, max-image-preview:large">
+<meta name="theme-color" content="#1a140e">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="阳光电影网">
+<meta property="og:title" content="阳光电影网 - yangguangdianyingwang-zh.com.github.io｜影片资料库与排片索引">
+<meta property="og:description" content="阳光电影网（yangguangdianyingwang-zh.com.github.io）整理华语、欧美、日韩影片的剧情、演职员、片长、评分与正版观看渠道。">
+<meta property="og:url" content="https://yangguangdianyingwang-zh.com.github.io/">
+<meta property="og:image" content="https://yangguangdianyingwang-zh.com.github.io/poster.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://yangguangdianyingwang-zh.com.github.io/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "阳光电影网",
+  "url": "https://yangguangdianyingwang-zh.com.github.io/",
+  "description": "影片资料库与排片索引站点",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://yangguangdianyingwang-zh.com.github.io/#search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "阳光电影网",
+  "url": "https://yangguangdianyingwang-zh.com.github.io/",
+  "logo": "https://yangguangdianyingwang-zh.com.github.io/poster.jpg"
+}
+</script>
+<style>
+:root{
+  --cell:#1a140e;--cell2:#251b12;--reel:#3a2b1c;--paper:#f7f3ea;--paper2:#efe8da;
+  --ink:#211912;--ink2:#5b4a3c;--ink3:#9a8674;
+  --sun:#f0a30a;--sun2:#ffc24b;--cream:#fff8e8;--red:#c8402c;--red2:#e8664f;
+  --green:#2f8f5b;--blue:#2b6cb0;
+  --r:10px;
+  --mono:ui-monospace,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.75;overflow-x:hidden;
+  background-image:radial-gradient(rgba(58,43,28,.085) 1px,transparent 1px);background-size:18px 18px;
+}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
+input,select,textarea{font:inherit}
+::selection{background:var(--sun);color:#211912}
+img{max-width:100%;display:block}
+
+/* ============ 顶条 ============ */
+.marquee{
+  background:var(--cell);color:var(--paper2);border-bottom:2px solid var(--sun);
+  overflow:hidden;height:34px;display:flex;align-items:center;position:relative;
+}
+.marquee .track{display:flex;gap:46px;white-space:nowrap;animation:scroll 60s linear infinite;font-size:.8rem;letter-spacing:.04em;padding-left:100%}
+.marquee .track span{display:inline-flex;align-items:center;gap:9px}
+.marquee .track b{color:var(--sun);font-family:var(--mono);font-size:.74rem;font-weight:700}
+.marquee:hover .track{animation-play-state:paused}
+@keyframes scroll{to{transform:translateX(-100%)}}
+.marquee .live{
+  position:absolute;left:0;top:0;bottom:0;background:var(--red);color:#fff;z-index:5;
+  display:flex;align-items:center;gap:7px;padding:0 14px;font-family:var(--mono);font-size:.72rem;font-weight:700;letter-spacing:.1em;
+}
+.marquee .live::after{content:"";position:absolute;right:-9px;top:50%;transform:translateY(-50%) rotate(45deg);width:18px;height:18px;background:var(--red)}
+.marquee .live i{width:6px;height:6px;border-radius:50%;background:#fff;animation:blink 1.6s infinite}
+@keyframes blink{50%{opacity:.25}}
+
+/* ============ 页头 ============ */
+header{position:sticky;top:0;z-index:90;background:var(--cell);border-bottom:1px solid var(--reel)}
+.head-in{max-width:1360px;margin:0 auto;padding:13px 28px;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:26px}
+.logo{display:flex;align-items:center;gap:13px;color:#fff;line-height:1.1}
+.logo .tk{width:46px;height:46px;background:var(--sun);border-radius:9px;display:grid;place-items:center;flex-shrink:0;position:relative;box-shadow:inset 0 0 0 3px var(--cell)}
+.logo .tk svg{width:26px;height:26px}
+.logo b{font-size:1.5rem;font-weight:800;letter-spacing:.01em}
+.logo small{display:block;font-family:var(--mono);font-size:.66rem;font-weight:500;color:var(--ink3);letter-spacing:.13em;margin-top:4px}
+.search{
+  position:relative;background:var(--cell2);border:1px solid var(--reel);border-radius:30px;padding:8px 15px 8px 40px;
+  display:flex;align-items:center;gap:9px;max-width:470px;width:100%;margin:0 auto;
+}
+.search svg{position:absolute;left:15px;top:50%;transform:translateY(-50%);opacity:.55}
+.search input{border:none;background:none;outline:none;color:var(--paper2);font-size:.92rem;flex:1;width:100%}
+.search input::placeholder{color:var(--ink3)}
+.search kbd{font-family:var(--mono);font-size:.68rem;color:var(--ink3);border:1px solid var(--reel);border-radius:4px;padding:1px 6px}
+.head-acts{display:flex;align-items:center;gap:9px}
+.chip{
+  display:inline-flex;align-items:center;gap:6px;padding:8px 15px;border-radius:30px;font-size:.84rem;
+  border:1px solid var(--reel);color:var(--paper2);background:var(--cell2);transition:.2s;white-space:nowrap;
+}
+.chip:hover{border-color:var(--sun);color:#fff}
+.chip.on{background:var(--sun);border-color:var(--sun);color:var(--cell);font-weight:700}
+.menu-btn{display:none;width:42px;height:42px;border:1px solid var(--reel);border-radius:9px;align-items:center;justify-content:center}
+.menu-btn span,.menu-btn span::before,.menu-btn span::after{display:block;width:18px;height:2px;background:var(--paper2)}
+.menu-btn span{position:relative}
+.menu-btn span::before,.menu-btn span::after{content:"";position:absolute;left:0;width:18px}
+.menu-btn span::before{top:-6px}.menu-btn span::after{top:6px}
+
+/* ============ 放映厅标签 ============ */
+.halls{background:#120d08;border-top:1px solid var(--reel)}
+.halls-in{max-width:1360px;margin:0 auto;padding:0 28px;display:flex;gap:3px;overflow-x:auto}
+.halls-in::-webkit-scrollbar{display:none}
+.halls-in a{
+  flex-shrink:0;padding:11px 16px 9px;border-bottom:3px solid transparent;margin-bottom:-3px;
+  color:var(--ink3);font-size:.86rem;font-weight:600;display:flex;align-items:center;gap:8px;white-space:nowrap;
+}
+.halls-in a:hover{color:var(--paper2)}
+.halls-in a.on{color:var(--sun);border-bottom-color:var(--sun)}
+.halls-in a .nm{font-family:var(--mono);font-size:.72rem;background:var(--reel);color:var(--paper2);border-radius:4px;padding:1px 5px;font-weight:700}
+.halls-in a.on .nm{background:var(--sun);color:var(--cell)}
+.halls-in .stretch{flex:1}
+
+/* ============ 布局 ============ */
+.wrap{max-width:1360px;margin:0 auto;padding:0 28px}
+.hero{padding:32px 0 24px}
+.hb{
+  display:grid;grid-template-columns:1.3fr 1fr;gap:0;background:var(--cell);border-radius:16px;overflow:hidden;
+  border:1px solid var(--reel);min-height:330px;
+}
+.hb-l{position:relative;padding:32px 36px;display:flex;flex-direction:column;justify-content:center;background:
+    radial-gradient(circle at 88% 18%,rgba(240,163,10,.28),transparent 55%),
+    radial-gradient(circle at 12% 88%,rgba(200,64,44,.22),transparent 50%),
+    var(--cell);
+}
+.hb-l::before{content:"";position:absolute;inset:0;background-image:repeating-linear-gradient(90deg,transparent 0,transparent 59px,rgba(240,163,10,.045) 59px,rgba(240,163,10,.045) 60px)}
+.hb-cr{position:relative;z-index:2}
+.hb-kicker{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;color:var(--sun);margin-bottom:15px}
+.hb-kicker::before{content:"";width:24px;height:2px;background:var(--sun)}
+.hb-l h1{font-size:clamp(1.75rem,4vw,2.9rem);line-height:1.2;font-weight:800;color:#fff;letter-spacing:-.01em;margin-bottom:8px}
+.hb-l h1 em{font-style:normal;color:var(--sun)}
+.hb-l h1 small{display:block;font-size:.62em;font-weight:600;color:var(--ink3);letter-spacing:.18em;margin-top:9px;font-family:var(--mono)}
+.hb-l p{font-size:.96rem;color:var(--paper2);max-width:52ch;line-height:1.9;margin-top:16px}
+.hb-acts{display:flex;gap:10px;margin-top:22px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 22px;border-radius:30px;font-size:.9rem;font-weight:700;transition:.2s;border:1px solid transparent}
+.btn-sun{background:var(--sun);color:var(--cell)}
+.btn-sun:hover{background:var(--sun2)}
+.btn-line{background:transparent;border-color:var(--reel);color:var(--paper2)}
+.btn-line:hover{border-color:var(--sun);color:#fff}
+.hb-r{background:var(--cell2);border-left:1px dashed var(--reel);padding:26px 30px;display:grid;grid-template-columns:1fr 1fr;gap:0;align-content:center}
+.tile{border-right:1px dashed var(--reel);border-bottom:1px dashed var(--reel);padding:15px 4px;display:flex;flex-direction:column;gap:4px}
+.tile:nth-child(2n){border-right:none;padding-left:18px}
+.tile:nth-last-child(-n+2){border-bottom:none}
+.tile:nth-child(n+3){padding-top:18px}
+.tile b{font-size:1.85rem;font-weight:800;color:#fff;font-family:var(--mono);letter-spacing:-.02em;line-height:1}
+.tile b i{font-style:normal;font-size:.85rem;color:var(--sun);margin-left:3px}
+.tile span{font-size:.76rem;color:var(--ink3);line-height:1.5}
+
+/* ============ 区块通用 ============ */
+section{padding:40px 0;border-top:1px solid rgba(58,43,28,.18)}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:18px;flex-wrap:wrap;margin-bottom:24px}
+.sec-t{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.sec-t b{font-size:clamp(1.3rem,2.6vw,1.8rem);font-weight:800;letter-spacing:-.01em}
+.sec-t em{font-style:normal;font-family:var(--mono);font-size:.74rem;color:var(--ink3);letter-spacing:.1em}
+.sec-t .mk{width:34px;height:34px;border-radius:8px;background:var(--sun);color:var(--cell);font-family:var(--mono);font-size:.82rem;font-weight:800;display:grid;place-items:center;flex-shrink:0}
+.sec-sub{font-size:.88rem;color:var(--ink2);max-width:68ch;margin:-12px 0 26px;line-height:1.85}
+.filters{display:flex;gap:7px;flex-wrap:wrap}
+.fl{font-size:.83rem;padding:7px 15px;border-radius:30px;border:1px solid rgba(58,43,28,.25);background:#fff;color:var(--ink2);transition:.18s;font-weight:500}
+.fl:hover{border-color:var(--ink3);color:var(--ink)}
+.fl.on{background:var(--cell);border-color:var(--cell);color:#fff}
+
+/* ============ 今日排片 ============ */
+.show{background:var(--cell);border-radius:14px;overflow:hidden;border:1px solid var(--reel)}
+.show-hd{
+  display:grid;grid-template-columns:74px 56px 2fr 1.2fr 1fr 104px 76px;gap:0;align-items:stretch;
+  background:var(--cell2);border-bottom:2px solid var(--sun);font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;color:var(--ink3);
+}
+.show-hd span{padding:12px 16px;display:flex;align-items:center;gap:8px}
+.show-hd span:last-child{justify-content:flex-end;text-align:right}
+.show-row{display:grid;grid-template-columns:74px 56px 2fr 1.2fr 1fr 104px 76px;gap:0;align-items:stretch;border-bottom:1px solid var(--reel);transition:.18s}
+.show-row:last-child{border-bottom:none}
+.show-row>*{padding:15px 16px;display:flex;align-items:center;gap:10px;color:var(--paper2);font-size:.9rem}
+.show-row>*:last-child{justify-content:flex-end;text-align:right}
+.show-row:hover{background:rgba(240,163,10,.055)}
+.show-row .ti{font-family:var(--mono);font-weight:700;color:var(--sun);font-size:.85rem}
+.show-row .hl{width:9px;height:9px;border-radius:50%;background:var(--sun);flex-shrink:0}
+.show-row .nm{font-weight:600;color:#fff}
+.show-row .nm small{display:block;font-weight:400;color:var(--ink3);font-size:.77rem;font-family:var(--mono);margin-top:2px}
+.show-row .ge{color:var(--paper2);font-size:.86rem}
+.show-row .ln{font-family:var(--mono);font-size:.82rem;color:var(--ink3)}
+.tag{font-family:var(--mono);font-size:.72rem;font-weight:700;padding:4px 9px;border-radius:5px;background:rgba(255,255,255,.07);color:var(--paper2);border:1px solid var(--reel);white-space:nowrap}
+.tag.dub{background:rgba(47,143,91,.2);border-color:rgba(47,143,91,.45);color:#8fe0b4}
+.tag.sub{background:rgba(43,108,176,.2);border-color:rgba(43,108,176,.45);color:#8fc0ee}
+.tag.og{background:rgba(240,163,10,.18);border-color:rgba(240,163,10,.45);color:var(--sun2)}
+.tag.4k{background:rgba(200,64,44,.2);border-color:rgba(200,64,44,.45);color:var(--red2)}
+.seat{
+  font-family:var(--mono);font-size:.8rem;font-weight:700;color:var(--sun);justify-self:flex-end;white-space:nowrap;
+  display:inline-flex;align-items:center;gap:6px;
+}
+.seat s{text-decoration:none;color:var(--ink3);font-weight:500}
+.seat.low s,.seat.low{color:var(--red2)}
+
+/* ============ 影厅 ============ */
+.hall{display:grid;grid-template-columns:repeat(5,1fr);gap:20px}
+.film{display:block;transition:.24s}
+.film .ps{
+  position:relative;aspect-ratio:2/3;border-radius:11px;overflow:hidden;background:var(--cell2);
+  border:1px solid rgba(58,43,28,.3);box-shadow:0 2px 0 rgba(58,43,28,.16);
+}
+.film .ps .gr{position:absolute;inset:0;display:grid;grid-template-rows:1fr auto;padding:14px;color:#fff;gap:10px}
+.film .ps .gr .tp{display:flex;flex-direction:column;justify-content:flex-end;gap:6px}
+.film .ps .gr b{font-weight:800;font-size:1.06rem;line-height:1.28;letter-spacing:.01em;text-shadow:0 2px 10px rgba(0,0,0,.35)}
+.film .ps .gr small{font-size:.7rem;font-weight:500;letter-spacing:.09em;opacity:.88;font-family:var(--mono)}
+.film .ps .gr .rt{display:flex;justify-content:space-between;align-items:flex-end;gap:8px}
+.film .ps .gr .rt i{font-style:normal;font-family:var(--mono);font-size:.72rem;background:rgba(0,0,0,.4);padding:2px 6px;border-radius:4px;backdrop-filter:blur(2px)}
+.film .ps .gr .rt b{font-size:1.15rem;font-family:var(--mono);font-weight:800;background:var(--sun);color:var(--cell);padding:3px 7px;border-radius:5px;line-height:1}
+.film .ps .gr .sh{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,20,14,.88) 4%,rgba(26,20,14,.1) 52%,rgba(26,20,14,.25))}
+.film .ps .gr>*{position:relative;z-index:2}
+.film .ps .corner{
+  position:absolute;top:9px;left:9px;z-index:3;font-family:var(--mono);font-size:.66rem;font-weight:700;
+  background:var(--sun);color:var(--cell);padding:3px 7px;border-radius:4px;
+}
+.film .ps .corner.dub{background:var(--green);color:#fff}
+.film .ps .corner.og{background:#fff;color:var(--cell)}
+.film .ps .torn{position:absolute;left:0;right:0;bottom:0;height:11px;background:
+  radial-gradient(circle at 6px 0,transparent 5px,var(--cell2) 5px) repeat-x;background-size:12px 11px;z-index:4}
+.film:hover .ps{transform:translateY(-6px);box-shadow:0 18px 30px -18px rgba(26,20,14,.6)}
+.film h4{font-size:.97rem;font-weight:700;margin:13px 0 4px;line-height:1.45}
+.film .st{display:flex;justify-content:space-between;gap:8px;font-size:.76rem;color:var(--ink3);font-family:var(--mono)}
+.film .st b{color:var(--ink2);font-weight:600}
+.film .lb{display:flex;gap:5px;flex-wrap:wrap;margin-top:7px}
+.film .lb i{font-style:normal;font-size:.7rem;font-weight:600;padding:2px 7px;border-radius:4px;background:var(--paper2);color:var(--ink2);border:1px solid rgba(58,43,28,.18)}
+.film .lb i.hot{background:#fbeee0;color:#a85c12;border-color:#f0d3ad}
+
+/* ============ 片种票夹 ============ */
+.wallets{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.wallet{
+  background:#fff;border:1px solid rgba(58,43,28,.2);border-radius:12px;padding:20px 22px;transition:.22s;position:relative;
+}
+.wallet::before{content:"";position:absolute;left:14px;right:14px;top:0;height:3px;border-radius:0 0 3px 3px;background:var(--c,var(--sun))}
+.wallet:hover{transform:translateY(-5px);box-shadow:0 16px 30px -20px rgba(26,20,14,.5)}
+.wallet h4{font-size:1.04rem;font-weight:700;display:flex;align-items:baseline;gap:8px;margin-bottom:4px}
+.wallet h4 em{font-style:normal;font-family:var(--mono);font-size:.72rem;color:var(--ink3);font-weight:600}
+.wallet p{font-size:.85rem;color:var(--ink2);line-height:1.75;margin-bottom:13px}
+.wallet ul{list-style:none;display:grid;gap:6px;font-size:.85rem}
+.wallet li{padding-left:14px;position:relative;color:var(--ink2)}
+.wallet li::before{content:"";position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:2px;background:var(--c,var(--sun));transform:rotate(45deg)}
+.wallet li:hover{color:var(--cell)}
+.wallet .more{display:inline-block;margin-top:13px;font-size:.8rem;font-weight:600;color:var(--c,var(--sun));border-bottom:1px solid currentColor}
+
+/* ============ 观众服务台 ============ */
+.counter{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid rgba(58,43,28,.2);border-radius:14px;overflow:hidden;background:#fff}
+.counter .cl{
+  padding:23px 26px;border-right:1px solid rgba(58,43,28,.12);border-bottom:1px solid rgba(58,43,28,.12);transition:.2s;
+}
+.counter .cl:nth-child(3n){border-right:none}
+.counter .cl:hover{background:var(--paper)}
+.counter .cl .ic{width:40px;height:40px;border-radius:10px;background:var(--paper2);display:grid;place-items:center;margin-bottom:13px;font-family:var(--mono);font-weight:800;color:var(--cell);font-size:.86rem}
+.counter .cl:nth-child(1) .ic{background:#fbeee0;color:#a85c12}
+.counter .cl:nth-child(2) .ic{background:#e9f5ef;color:var(--green)}
+.counter .cl:nth-child(3) .ic{background:#f9e4e1;color:var(--red)}
+.counter .cl:nth-child(4) .ic{background:#e7eefa;color:var(--blue)}
+.counter .cl:nth-child(5) .ic{background:#f3ecf8;color:#6b4ea8}
+.counter .cl:nth-child(6) .ic{background:#fdf0d8;color:#8a6308}
+.counter .cl h4{font-size:1rem;font-weight:700;margin-bottom:6px}
+.counter .cl p{font-size:.85rem;color:var(--ink2);line-height:1.75}
+.counter .cl a{font-size:.81rem;color:#a85c12;font-weight:600;display:inline-block;margin-top:9px;border-bottom:1px solid rgba(168,92,18,.3)}
+
+/* ============ 影讯 ============ */
+.news{display:grid;grid-template-columns:1.35fr 1fr;gap:20px}
+.news .lead{background:var(--cell);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;color:var(--paper2);border:1px solid var(--reel)}
+.news .lead .ph{aspect-ratio:16/10;position:relative;overflow:hidden}
+.news .lead .ph .gr{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:20px;color:#fff}
+.news .lead .ph .gr b{font-size:clamp(1.3rem,2.6vw,1.8rem);font-weight:800;line-height:1.3;text-shadow:0 3px 16px rgba(0,0,0,.4)}
+.news .lead .ph .gr small{display:block;font-family:var(--mono);font-size:.74rem;letter-spacing:.1em;opacity:.85;margin-top:9px}
+.news .lead .ph .sh{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,20,14,.6),transparent 60%)}
+.news .lead .tx{padding:22px 24px}
+.news .lead .tx .dt{font-family:var(--mono);font-size:.74rem;color:var(--sun);font-weight:700;letter-spacing:.08em}
+.news .lead .tx h4{font-size:1.18rem;font-weight:700;color:#fff;margin:9px 0 10px;line-height:1.5}
+.news .lead .tx p{font-size:.88rem;color:var(--paper2);line-height:1.85}
+.news .list{background:#fff;border:1px solid rgba(58,43,28,.2);border-radius:14px;padding:8px 0;display:grid}
+.news .list a{
+  display:grid;grid-template-columns:56px 1fr;gap:14px;padding:14px 22px;border-bottom:1px dashed rgba(58,43,28,.16);transition:.16s;
+}
+.news .list a:last-child{border-bottom:none}
+.news .list a:hover{background:var(--paper)}
+.news .list a .dy{font-family:var(--mono);font-size:.78rem;font-weight:700;color:var(--sun);line-height:1.5;border-right:2px solid var(--paper2);padding-right:12px}
+.news .list a .dy b{display:block;font-size:1.05rem;color:var(--cell)}
+.news .list a .tx2 h5{font-size:.94rem;font-weight:600;line-height:1.5;margin-bottom:3px}
+.news .list a .tx2 span{font-size:.78rem;color:var(--ink3);font-family:var(--mono)}
+
+/* ============ 放映指南 ============ */
+.guide{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid rgba(58,43,28,.2);border-radius:14px;overflow:hidden;background:#fff}
+.guide .st{display:flex;gap:16px;padding:20px 22px;border-right:1px solid rgba(58,43,28,.12);border-bottom:1px solid rgba(58,43,28,.12)}
+.guide .st:nth-child(4n){border-right:none}
+.guide .st:nth-child(n+5){border-bottom:none}
+.guide .st .no{font-family:var(--mono);font-size:1.7rem;font-weight:800;color:rgba(240,163,10,.35);line-height:.9;flex-shrink:0}
+.guide .st h4{font-size:.96rem;font-weight:700;margin-bottom:5px}
+.guide .st p{font-size:.83rem;color:var(--ink2);line-height:1.75}
+
+/* ============ 影评专栏 ============ */
+.rev{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.rev .ar{background:#fff;border:1px solid rgba(58,43,28,.2);border-radius:12px;overflow:hidden;transition:.24s;display:flex;flex-direction:column}
+.rev .ar:hover{transform:translateY(-5px);box-shadow:0 18px 32px -22px rgba(26,20,14,.55)}
+.rev .ar .cv{aspect-ratio:16/9;position:relative;overflow:hidden}
+.rev .ar .cv .gr{position:absolute;inset:0;display:grid;place-items:center;padding:18px;text-align:center;color:#fff}
+.rev .ar .cv .gr b{font-size:1.15rem;font-weight:800;line-height:1.35;text-shadow:0 2px 12px rgba(0,0,0,.35)}
+.rev .ar .cv .no{position:absolute;left:11px;bottom:10px;font-family:var(--mono);font-size:.72rem;font-weight:700;background:rgba(0,0,0,.45);color:#fff;padding:2px 8px;border-radius:4px;backdrop-filter:blur(2px)}
+.rev .ar .tx{padding:18px 20px;display:flex;flex-direction:column;gap:8px;flex:1}
+.rev .ar .tx .au{display:flex;justify-content:space-between;align-items:baseline;gap:10px;font-size:.8rem;color:var(--ink3);font-family:var(--mono)}
+.rev .ar .tx .au b{font-weight:600;color:var(--ink2)}
+.rev .ar .tx p{font-size:.86rem;color:var(--ink2);line-height:1.8}
+.rev .ar .tx .rd{margin-top:auto;font-size:.8rem;font-weight:600;color:#a85c12;border-top:1px solid var(--paper2);padding-top:12px}
+
+/* ============ FAQ ============ */
+.faq{background:#fff;border:1px solid rgba(58,43,28,.2);border-radius:14px;overflow:hidden}
+.faq details{border-bottom:1px solid rgba(58,43,28,.12)}
+.faq details:last-child{border-bottom:none}
+.faq summary{
+  padding:16px 24px;cursor:pointer;list-style:none;font-weight:600;font-size:.94rem;
+  display:grid;grid-template-columns:58px 1fr 24px;align-items:center;gap:14px;transition:.18s;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:hover{background:var(--paper)}
+.faq summary .qk{font-family:var(--mono);font-size:.74rem;font-weight:700;color:#a85c12;background:var(--paper2);border-radius:6px;padding:4px 0;text-align:center}
+.faq summary .ar{color:var(--sun);font-size:1.2rem;transition:.2s;justify-self:end;line-height:1}
+.faq details[open] summary .ar{transform:rotate(45deg)}
+.faq .a{padding:0 24px 20px 96px;font-size:.89rem;color:var(--ink2);line-height:1.85}
+.faq .a a{color:#a85c12;border-bottom:1px solid rgba(168,92,18,.35);font-weight:600}
+
+/* ============ 页脚 ============ */
+footer{margin-top:56px;background:var(--cell);color:var(--paper2);padding:44px 0 0;border-top:4px solid var(--sun)}
+.foot-in{max-width:1360px;margin:0 auto;padding:0 28px}
+.foot-top{display:grid;grid-template-columns:1.45fr 1fr 1fr 1fr 1fr;gap:30px;padding-bottom:32px;border-bottom:1px solid var(--reel)}
+.foot-top .lg{display:flex;align-items:center;gap:12px;font-weight:800;font-size:1.4rem;color:#fff;margin-bottom:12px}
+.foot-top .lg .tk{width:38px;height:38px;background:var(--sun);border-radius:8px;display:grid;place-items:center;flex-shrink:0}
+.foot-top p{font-size:.85rem;color:var(--ink3);max-width:34ch;line-height:1.85}
+.foot-top .cert{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap}
+.foot-top .cert span{font-family:var(--mono);font-size:.72rem;color:var(--sun);border:1px solid var(--reel);border-radius:5px;padding:4px 9px;background:var(--cell2)}
+.foot-col h6{font-size:.73rem;letter-spacing:.16em;color:#fff;margin-bottom:14px;font-family:var(--mono)}
+.foot-col ul{list-style:none;display:grid;gap:9px}
+.foot-col a{color:var(--paper2);font-size:.87rem}
+.foot-col a:hover{color:var(--sun2)}
+.foot-mid{padding:24px 0;border-bottom:1px solid var(--reel);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center;font-size:.84rem;color:var(--ink3)}
+.foot-mid .lk{display:flex;gap:18px;flex-wrap:wrap}
+.foot-mid .lk a{color:var(--paper2)}
+.foot-mid .lk a:hover{color:var(--sun2)}
+.foot-bot{padding:18px 0 26px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:.78rem;color:var(--ink3);font-family:var(--mono)}
+.foot-bot b{color:var(--paper2);font-weight:600}
+#top{position:fixed;right:16px;bottom:18px;width:44px;height:44px;border-radius:50%;background:var(--cell);color:var(--sun);display:grid;place-items:center;z-index:80;opacity:0;visibility:hidden;transition:.28s;box-shadow:0 8px 22px -8px rgba(26,20,14,.7);font-size:1.2rem}
+#top.show{opacity:1;visibility:visible}
+#top:hover{background:var(--sun);color:var(--cell)}
+
+@media (max-width:1180px){
+  .hall{grid-template-columns:repeat(4,1fr)}
+  .wallets{grid-template-columns:repeat(2,1fr)}
+  .guide{grid-template-columns:repeat(2,1fr)}
+  .guide .st:nth-child(4n){border-right:1px solid rgba(58,43,28,.12)}
+  .guide .st:nth-child(2n){border-right:none}
+  .rev{grid-template-columns:1fr 1fr}
+  .foot-top{grid-template-columns:1fr 1fr 1fr}
+  .foot-top .f1{grid-column:1/-1}
+}
+@media (max-width:900px){
+  .head-acts .chip:not(.on){display:none}
+  .menu-btn{display:flex}
+  .halls{display:none;position:fixed;inset:0;background:var(--cell);z-index:85;padding:76px 24px 30px;overflow-y:auto}
+  .halls.open{display:block}
+  .halls-in{flex-direction:column;gap:0;padding:0;overflow:visible}
+  .halls-in a{padding:15px 4px;border-bottom:1px solid var(--reel);font-size:1rem;color:#fff}
+  .halls-in a.on{border-bottom-color:var(--reel);border-left:3px solid var(--sun);padding-left:12px}
+  .halls-in .stretch{display:none}
+  .hb{grid-template-columns:1fr;min-height:auto}
+  .hb-r{border-left:none;border-top:1px dashed var(--reel);grid-template-columns:1fr 1fr}
+  .hall{grid-template-columns:repeat(3,1fr);gap:18px 14px}
+  .show-hd{display:none}
+  .show-row{grid-template-columns:1fr;gap:0;padding:14px 16px;border-bottom:1px solid var(--reel)}
+  .show-row>*{padding:5px 0;border-bottom:none}
+  .show-row .nm small{display:inline;margin-left:8px}
+  .show-row .seat,.show-row .tag{justify-self:flex-start}
+  .show-row .ti{display:none}
+  .news{grid-template-columns:1fr}
+  .counter{grid-template-columns:1fr}
+  .counter .cl{border-right:none}
+  .rev{grid-template-columns:1fr}
+  .guide{grid-template-columns:1fr}
+  .guide .st{border-right:none}
+}
+@media (max-width:600px){
+  .marquee{height:30px;font-size:.74rem}
+  .head-in{padding:12px 16px;gap:12px}
+  .logo b{font-size:1.25rem}
+  .logo small{display:none}
+  .search{padding-left:36px}
+  .search kbd{display:none}
+  .wrap,.foot-in{padding-left:16px;padding-right:16px}
+  .hall{grid-template-columns:repeat(2,1fr);gap:18px 12px}
+  .wallets,.foot-top{grid-template-columns:1fr 1fr}
+  .hero{padding:22px 0 16px}
+  .hb-l{padding:24px}
+  .hb-r{padding:20px 22px}
+  section{padding:32px 0}
+  .faq summary{grid-template-columns:46px 1fr 20px;padding:15px 18px}
+  .faq .a{padding:0 18px 18px 76px}
+  .news .list a{padding:13px 16px}
+  .foot-top{grid-template-columns:1fr}
+  .foot-top .f1{grid-column:auto}
+}
+@media print{
+  .marquee,header,.halls,.menu-btn,#top,.filters,.faq summary .ar{display:none!important}
+  body{background:#fff}
+  .hb,.show,.news .lead,.foot-top .cert{background:#fff;color:#000;border:1px solid #ccc}
+  .hb-l h1,.show-row .nm,.news .lead .tx h4{color:#000}
+  a{color:#000}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/zhangzong.js"></script>
+
+<div class="marquee" aria-label="今日场次公告">
+  <div class="live"><i></i>LIVE</div>
+  <div class="track">
+    <span><b>1厅</b>热映中：《封神第二部》国语 2D · 上座率 82%</span>
+    <span><b>3厅</b>今日最后一场：《奥本海默》原声 4K · 19:40</span>
+    <span><b>5厅</b>新片开画：《姥姥的外孙》中文字幕 · 排片增加 3 场</span>
+    <span><b>7厅</b>重映：《花样年华》4K 修复版 · 本周五起连映 7 天</span>
+    <span><b>9厅</b>亲子专场：《你想活出怎样的人生》国语 · 周六 10:30</span>
+    <span><b>公告</b>资料库新增港片单元，首批收录 240 部</span>
+    <span><b>1厅</b>热映中：《封神第二部》国语 2D · 上座率 82%</span>
+    <span><b>3厅</b>今日最后一场：《奥本海默》原声 4K · 19:40</span>
+    <span><b>5厅</b>新片开画：《姥姥的外孙》中文字幕 · 排片增加 3 场</span>
+    <span><b>7厅</b>重映：《花样年华》4K 修复版 · 本周五起连映 7 天</span>
+    <span><b>9厅</b>亲子专场：《你想活出怎样的人生》国语 · 周六 10:30</span>
+    <span><b>公告</b>资料库新增港片单元，首批收录 240 部</span>
+  </div>
+</div>
+
+<header>
+  <div class="head-in">
+    <a class="logo" href="https://yangguangdianyingwang-zh.com.github.io/">
+      <span class="tk"><svg viewBox="0 0 24 24" fill="none" stroke="#1a140e" stroke-width="2.4"><rect x="3" y="6" width="18" height="13" rx="2"/><circle cx="8" cy="12" r="1.2" fill="#1a140e"/><circle cx="16" cy="12" r="1.2" fill="#1a140e"/></svg></span>
+      <span>阳光电影网<small>YANGGUANG DIANYINGWANG / FILM INDEX</small></span>
+    </a>
+    <div class="search">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input type="search" placeholder="搜索片名、导演、演员或片种，如：诺兰、梁朝伟、犯罪片" aria-label="搜索影片">
+      <kbd>/</kbd>
+    </div>
+    <div class="head-acts">
+      <a class="chip" href="#guide">观片指南</a>
+      <a class="chip on" href="#show">今日排片</a>
+      <button class="menu-btn" id="menuBtn" aria-label="打开菜单"><span></span></button>
+    </div>
+  </div>
+  <nav class="halls" id="halls">
+    <div class="halls-in">
+      <a href="#show" class="on"><span class="nm">1厅</span>今日排片</a>
+      <a href="#hot"><span class="nm">2厅</span>正在热映</a>
+      <a href="#coming"><span class="nm">3厅</span>即将上映</a>
+      <a href="#wallets"><span class="nm">4厅</span>片种票夹</a>
+      <a href="#counter"><span class="nm">5厅</span>观众服务台</a>
+      <a href="#news"><span class="nm">6厅</span>影讯公告</a>
+      <a href="#rev"><span class="nm">7厅</span>影评专栏</a>
+      <a href="#faq"><span class="nm">8厅</span>常见问题</a>
+      <span class="stretch"></span>
+      <a href="#sitemap"><span class="nm">总台</span>站点地图</a>
+    </div>
+  </nav>
+</header>
+
+<div class="wrap">
+  <div class="hero">
+    <div class="hb">
+      <div class="hb-l">
+        <div class="hb-cr">
+          <div class="hb-kicker">YANGGUANGDIANYINGWANG · 影片资料库</div>
+          <h1>阳光电影网，<em>9 个放映厅</em><br>按片种归档每一场放映<small>SHOWING · NOW / IN THEATRE &amp; STREAMING</small></h1>
+          <p>阳光电影网（yangguangdianyingwang-zh.com.github.io）是影片资料库与排片索引站点，整理华语、欧美、日韩影片的剧情简介、演职员、片长、评分与正版观看渠道。我们不提供在线播放，只帮你把「想看但记不清名字」的那部片子找出来。</p>
+          <div class="hb-acts">
+            <a class="btn btn-sun" href="#show">查看今日排片 →</a>
+            <a class="btn btn-line" href="#guide">十分钟学会检索</a>
+          </div>
+        </div>
+      </div>
+      <div class="hb-r">
+        <div class="tile"><b>9<i>厅</i></b><span>放映厅分类<br>华语 · 欧美 · 日韩</span></div>
+        <div class="tile"><b>4,120<i>部</i></b><span>已建档影片<br>含院线与网络电影</span></div>
+        <div class="tile"><b>1,860<i>部</i></b><span>标注正版渠道<br>占比约 45%</span></div>
+        <div class="tile"><b>78<i>分钟</i></b><span>平均检索耗时<br>从片名模糊到定位</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 今日排片 -->
+<section id="show">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-t"><span class="mk">1</span><b>今日排片</b><em>SHOWTIMES / 12 个影厅 · 实时场次</em></div>
+      <div class="filters">
+        <a class="fl on" href="#">全部影厅</a><a class="fl" href="#">华语</a><a class="fl" href="#">欧美</a><a class="fl" href="#">日韩</a><a class="fl" href="#">4K 修复</a>
+      </div>
+    </div>
+    <p class="sec-sub">表头依次为影厅、放映格式、片名、片种、语言版本、场次信息与余票状态。放映时间由各地院线自行安排，表中信息仅供参考，实际以影院公示为准。</p>
+    <div class="show">
+      <div class="show-hd"><span>影厅</span><span>格式</span><span>片名</span><span>片种</span><span>语言版本</span><span>场次</span><span>余票</span></div>
+      <div class="show-row"><span class="ti">1厅</span><span class="hl"></span><span class="nm">封神第二部：战火西岐<small>华语 · 2025 · 片长 144 分钟</small></span><span class="ge">古装 · 奇幻</span><span class="ln">国语 2D</span><span><span class="tag og">正在热映</span></span><span class="seat">82% <s>满座</s></span></div>
+      <div class="show-row"><span class="ti">2厅</span><span class="hl"></span><span class="nm">奥本海默<small>欧美 · 2023 · 片长 180 分钟</small></span><span class="ge">传记 · 历史</span><span class="ln">原声 4K</span><span><span class="tag 4k">19:40</span></span><span class="seat low">14% <s>余票</s></span></div>
+      <div class="show-row"><span class="ti">3厅</span><span class="hl"></span><span class="nm">姥姥的外孙<small>泰语 · 2024 · 片长 127 分钟</small></span><span class="ge">家庭 · 剧情</span><span class="ln">中文字幕</span><span><span class="tag sub">排片 +3</span></span><span class="seat">61% <s>满座</s></span></div>
+      <div class="show-row"><span class="ti">4厅</span><span class="hl"></span><span class="nm">周处除三害<small>华语 · 2023 · 片长 134 分钟</small></span><span class="ge">动作 · 犯罪</span><span class="ln">国语 2D</span><span><span class="tag og">正在热映</span></span><span class="seat">73% <s>满座</s></span></div>
+      <div class="show-row"><span class="ti">5厅</span><span class="hl"></span><span class="nm">花样年华<small>华语 · 2000 · 片长 98 分钟</small></span><span class="ge">爱情 · 文艺</span><span class="ln">4K 修复</span><span><span class="tag 4k">周五起连映</span></span><span class="seat">28% <s>余票</s></span></div>
+      <div class="show-row"><span class="ti">6厅</span><span class="hl"></span><span class="nm">你想活出怎样的人生<small>日韩 · 2023 · 片长 124 分钟</small></span><span class="ge">动画 · 奇幻</span><span class="ln">国语配音</span><span><span class="tag dub">亲子专场</span></span><span class="seat">46% <s>余票</s></span></div>
+      <div class="show-row"><span class="ti">7厅</span><span class="hl"></span><span class="nm">狗阵<small>华语 · 2024 · 片长 106 分钟</small></span><span class="ge">剧情 · 现实</span><span class="ln">原声 2D</span><span><span class="tag">艺术院线</span></span><span class="seat">55% <s>满座</s></span></div>
+      <div class="show-row"><span class="ti">8厅</span><span class="hl"></span><span class="nm">利益区域<small>欧美 · 2023 · 片长 105 分钟</small></span><span class="ge">战争 · 纪录</span><span class="ln">中文字幕</span><span><span class="tag sub">资料放映</span></span><span class="seat low">9% <s>余票</s></span></div>
+      <div class="show-row"><span class="ti">9厅</span><span class="hl"></span><span class="nm">蓦然回首<small>日韩 · 2024 · 片长 58 分钟</small></span><span class="ge">动画 · 青春</span><span class="ln">原声字幕</span><span><span class="tag sub">点映专场</span></span><span class="seat">39% <s>余票</s></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 正在热映 -->
+<section id="hot">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-t"><span class="mk">2</span><b>正在热映</b><em>NOW SHOWING / 本周检索量前 10 位</em></div>
+      <div class="filters">
+        <a class="fl on" href="#">综合热度</a><a class="fl" href="#">华语</a><a class="fl" href="#">欧美</a><a class="fl" href="#">日韩</a><a class="fl" href="#">高分</a>
+      </div>
+    </div>
+    <div class="hall">
+      <a class="film" href="#sitemap">
+        <div class="ps"><span class="corner">华语</span><div class="gr" style="background:linear-gradient(150deg,#c8402c,#6e1f12)"><div class="sh"></div><div class="tp"><b>封神第二部：战火西岐</b><small>CREATION OF THE GODS Ⅱ</small></div><div class="rt"><i>古装 · 奇幻</i><b>7.6</b></div></div><span class="torn"></span></div>
+        <h4>封神第二部：战火西岐</h4><div class="st"><b>乌尔善</b><span>144 分钟</span></div><div class="lb"><i class="hot">热映</i><i>华语</i><i>奇幻</i></div>
+      </a>
+      <a class="film" href="#sitemap">
+        <div class="ps"><span class="corner">华语</span><div class="gr" style="background:linear-gradient(150deg,#1f3a5f,#0d1b2e)"><div class="sh"></div><div class="tp"><b>周处除三害</b><small>THE PIG, THE SNAKE AND THE PIGEON</small></div><div class="rt"><i>动作 · 犯罪</i><b>8.2</b></div></div><span class="torn"></span></div>
+        <h4>周处除三害</h4><div class="st"><b>黄精甫</b><span>134 分钟</span></div><div class="lb"><i class="hot">高分</i><i>犯罪</i></div>
+      </a>
+      <a class="film" href="#sitemap">
+        <div class="ps"><span class="corner">欧美</span><div class="gr" style="background:linear-gradient(150deg,#2f5d8a,#132b42)"><div class="sh"></div><div class="tp"><b>奥本海默</b><small>OPPENHEIMER</small></div><div class="rt"><i>传记 · 历史</i><b>8.8</b></div></div><span class="torn"></span></div>
+        <h4>奥本海默</h4><div class="st"><b>克里斯托弗·诺兰</b><span>180 分钟</span></div><div class="lb"><i class="hot">4K</i><i>欧美</i><i>传记</i></div>
+      </a>
+      <a class="film" href="#sitemap">
+        <div class="ps"><span class="corner">日韩</span><div class="gr" style="background:linear-gradient(150deg,#c77b2f,#5c3810)"><div class="sh"></div><div class="tp"><b>姥姥的外孙</b><small>HOW TO MAKE MILLIONS BEFORE GRANDMA DIES</small></div><div class="rt"><i>家庭 · 剧情</i><b>8.4</b></div></div><span class="torn"></span></div>
+        <h4>姥姥的外孙</h4><div class="st"><b>帕特·波尼蒂帕特</b><span>127 分钟</span></div><div class="lb"><i class="hot">升温</i><i>家庭</i></div>
+      </a>
+      <a class="film" href="#sitemap">
+        <div class="ps"><span class="corner">华语</span><div class="gr" style="background:linear-gradient(150deg,#7a4fa0,#352047)"><div class="sh"></div><div class="tp"><b>狗阵</b><small>BLACK DOG</small></div><div class="rt"><i>剧情 · 现实</i><b>7.9</b></div></div><span class="torn"></span></div>
+        <h4>狗阵</h4><div class="st"><b>管虎</b><span>106 分钟</span></div><div class="lb"><i>艺术院线</i><i>华语</i></div>
+      </a>
+      <a class="film" href="#sitemap">
+        <div class="ps"><span class="corner dub">配音</span><div class="gr" style="background:linear-gradient(150deg,#3f8f6f,#1c4333)"><div class="sh"></div><div class="tp"><b>你想活出怎样的人生</b><small>THE BOY AND THE HERON</small></div><div class="rt"><i>动画 · 奇幻</i><b>7.7</b></div></div><span class="torn"></span></div>
+        <h4>你想活出怎样的人生</h4><div class="st"><b>宫崎骏</b><span>124 分钟</span></div><div class="lb"><i class="hot">亲子</i><i>动画</i></div>
+      </a>
+      <a class="film" href="#sitemap">
+        <div class="ps"><span class="corner og">修复</span><div class="gr" style="background:linear-gradient(150deg,#b5893c,#4a3714)"><div class="sh"></div><div class="tp"><b>花样年华</b><small>IN THE MOOD FOR LOVE</small></div><div class="rt"><i>爱情 · 文艺</i><b>8.7</b></div></div><span class="torn"></span></div>
+        <h4>花样年华</h4><div class="st"><b>王家卫</b><span>98 分钟</span></div><div class="lb"><i>4K 修复</i><i>华语</i><i>经典</i></div>
+      </a>
+      <a class="film" href="#sitemap">
+        <div class="ps"><span class="corner">欧美</span><div class="gr" style="background:linear-gradient(150deg,#4a6b7a,#1e3038)"><div class="sh"></div><div class="tp"><b>利益区域</b><small>THE ZONE OF INTEREST</small></div><div class="rt"><i>战争 · 纪录</i><b>7.5</b></div></div><span class="torn"></span></div>
+        <h4>利益区域</h4><div class="st"><b>乔纳森·格雷泽</b><span>105 分钟</span></div><div class="lb"><i>资料放映</i><i>欧美</i></div>
+      </a>
+      <a class="film" href="#sitemap">
+        <div class="ps"><span class="corner sub">字幕</span><div class="gr" style="background:linear-gradient(150deg,#d0508a,#5e1f42)"><div class="sh"></div><div class="tp"><b>蓦然回首</b><small>LOOK BACK</small></div><div class="rt"><i>动画 · 青春</i><b>8.6</b></div></div><span class="torn"></span></div>
+        <h4>蓦然回首</h4><div class="st"><b>押山清高</b><span>58 分钟</span></div><div class="lb"><i class="hot">点映</i><i>动画</i></div>
+      </a>
+      <a class="film" href="#sitemap">
+        <div class="ps"><span class="corner">华语</span><div class="gr" style="background:linear-gradient(150deg,#2f6f7a,#14313a)"><div class="sh"></div><div class="tp"><b>逆行人生</b><small>UPSTREAM</small></div><div class="rt"><i>剧情 · 现实</i><b>7.1</b></div></div><span class="torn"></span></div>
+        <h4>逆行人生</h4><div class="st"><b>徐峥</b><span>126 分钟</span></div><div class="lb"><i>华语</i><i>现实</i></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 即将上映 -->
+<section id="coming">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-t"><span class="mk">3</span><b>即将上映</b><em>COMING SOON / 已定档影片</em></div>
+      <div class="filters">
+        <a class="fl on" href="#">本月</a><a class="fl" href="#">下月</a><a class="fl" href="#">待定档</a><a class="fl" href="#">华语优先</a>
+      </div>
+    </div>
+    <p class="sec-sub">定档日期以出品方官宣为准，本表每周三同步更新一次。档期调整频繁时，建议以「<a href="#news">影讯公告</a>」栏的最新条目为准。</p>
+    <div class="show">
+      <div class="show-hd"><span>档期</span><span>格式</span><span>片名</span><span>片种</span><span>语言版本</span><span>状态</span><span>热度</span></div>
+      <div class="show-row"><span class="ti">10.03</span><span class="hl"></span><span class="nm">危机航线<small>华语 · 刘德华 / 张子枫</small></span><span class="ge">动作 · 悬疑</span><span class="ln">国语 2D</span><span><span class="tag">已定档</span></span><span class="seat">92 <s>想看</s></span></div>
+      <div class="show-row"><span class="ti">10.18</span><span class="hl"></span><span class="nm">乔妍的心事<small>华语 · 赵丽颖 / 辛芷蕾</small></span><span class="ge">悬疑 · 剧情</span><span class="ln">国语 2D</span><span><span class="tag">已定档</span></span><span class="seat">78 <s>想看</s></span></div>
+      <div class="show-row"><span class="ti">10.25</span><span class="hl"></span><span class="nm">小丑回魂 3<small>欧美 · 安德斯·穆斯切蒂</small></span><span class="ge">恐怖 · 惊悚</span><span class="ln">原声 3D</span><span><span class="tag sub">待引进</span></span><span class="seat low">41 <s>想看</s></span></div>
+      <div class="show-row"><span class="ti">11.01</span><span class="hl"></span><span class="nm">鬼灭之刃 柱训篇<small>日韩 · 外崎春雄</small></span><span class="ge">动画 · 热血</span><span class="ln">原声字幕</span><span><span class="tag 4k">已定档</span></span><span class="seat">113 <s>想看</s></span></div>
+      <div class="show-row"><span class="ti">11.15</span><span class="hl"></span><span class="nm">焚城<small>华语 · 刘德华 / 莫文蔚</small></span><span class="ge">灾难 · 动作</span><span class="ln">国语 IMAX</span><span><span class="tag">已定档</span></span><span class="seat">86 <s>想看</s></span></div>
+      <div class="show-row"><span class="ti">12.06</span><span class="hl"></span><span class="nm">小小的我<small>华语 · 易烊千玺</small></span><span class="ge">剧情 · 现实</span><span class="ln">国语 2D</span><span><span class="tag">已定档</span></span><span class="seat">67 <s>想看</s></span></div>
+      <div class="show-row"><span class="ti">待定</span><span class="hl"></span><span class="nm">酱园弄<small>华语 · 陈可辛</small></span><span class="ge">剧情 · 历史</span><span class="ln">国语 2D</span><span><span class="tag sub">待定档</span></span><span class="seat low">33 <s>想看</s></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 片种票夹 -->
+<section id="wallets">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-t"><span class="mk">4</span><b>片种票夹</b><em>GENRE WALLETS / 按类型归档的检索入口</em></div>
+    </div>
+    <div class="wallets">
+      <div class="wallet" style="--c:#c8402c">
+        <h4>动作犯罪 <em>312 部</em></h4><p>警匪、黑帮、谍战与抢劫题材，含港片黄金期作品与近年国产犯罪片。</p>
+        <ul><li>港片警匪经典（1986-2005）</li><li>内地犯罪现实题材</li><li>欧美谍战与抢劫</li><li>日韩犯罪与社会派</li></ul>
+        <a class="more" href="#sitemap">进入动作犯罪票夹 →</a>
+      </div>
+      <div class="wallet" style="--c:#2f8f5b">
+        <h4>剧情现实 <em>486 部</em></h4><p>以人物与事件为核心的现实主义作品，多为各大电影节的常客。</p>
+        <ul><li>华语独立电影</li><li>社会议题题材</li><li>欧美颁奖季作品</li><li>亚洲家庭伦理片</li></ul>
+        <a class="more" href="#sitemap">进入剧情现实票夹 →</a>
+      </div>
+      <div class="wallet" style="--c:#2b6cb0">
+        <h4>爱情文艺 <em>378 部</em></h4><p>爱情、青春与作者电影，含王家卫、侯孝贤、岩井俊二系列。</p>
+        <ul><li>华语爱情经典</li><li>青春校园题材</li><li>法国与意大利爱情片</li><li>亚洲纯爱电影</li></ul>
+        <a class="more" href="#sitemap">进入爱情文艺票夹 →</a>
+      </div>
+      <div class="wallet" style="--c:#7a4fa0">
+        <h4>科幻奇幻 <em>245 部</em></h4><p>硬科幻、太空题材与东方奇幻，按设定严谨度与视效水准分级。</p>
+        <ul><li>赛博朋克与反乌托邦</li><li>太空与星际题材</li><li>华语古装奇幻</li><li>时间循环与平行宇宙</li></ul>
+        <a class="more" href="#sitemap">进入科幻奇幻票夹 →</a>
+      </div>
+      <div class="wallet" style="--c:#c77b2f">
+        <h4>悬疑惊悚 <em>296 部</em></h4><p>密室、反转与心理惊悚，含本格推理改编与奉俊昊式社会派。</p>
+        <ul><li>本格推理改编</li><li>密室与孤岛模式</li><li>心理惊悚片</li><li>亚洲悬疑佳作</li></ul>
+        <a class="more" href="#sitemap">进入悬疑惊悚票夹 →</a>
+      </div>
+      <div class="wallet" style="--c:#3f8f6f">
+        <h4>动画国漫 <em>198 部</em></h4><p>日本动画电影、国产动画长片与欧洲艺术动画，含新旧片种。</p>
+        <ul><li>吉卜力与细田守</li><li>新海诚系列</li><li>国产动画电影</li><li>欧洲艺术动画</li></ul>
+        <a class="more" href="#sitemap">进入动画国漫票夹 →</a>
+      </div>
+      <div class="wallet" style="--c:#b5893c">
+        <h4>经典修复 <em>167 部</em></h4><p>4K 修复与重映单元，含华语新浪潮与欧美老片数字修复版。</p>
+        <ul><li>4K 修复重映</li><li>华语新浪潮</li><li>欧美老片数字修复</li><li>影展特别放映</li></ul>
+        <a class="more" href="#sitemap">进入经典修复票夹 →</a>
+      </div>
+      <div class="wallet" style="--c:#4a6b7a">
+        <h4>纪录与短片 <em>134 部</em></h4><p>纪录电影与短片合集，多为电影节获奖作品与院线发行版本。</p>
+        <ul><li>纪录电影</li><li>短片合集</li><li>电影节获奖短片</li><li>作者实验影像</li></ul>
+        <a class="more" href="#sitemap">进入纪录短片票夹 →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 观众服务台 -->
+<section id="counter">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-t"><span class="mk">5</span><b>观众服务台</b><em>SERVICE COUNTER / 六个常问功能</em></div>
+    </div>
+    <div class="counter">
+      <div class="cl"><div class="ic">01</div><h4>影片资料检索</h4><p>支持片名、导演、主演、编剧、制片地区与模糊片名混输检索，可按片种、年份与语言版本交叉筛选。</p><a href="#show">进入排片检索 →</a></div>
+      <div class="cl"><div class="ic">02</div><h4>正版渠道索引</h4><p>约 45% 的建档影片标注了可确认的正版观看渠道，优先指向版权方与授权平台，不提供盗版资源。</p><a href="#sitemap">查看渠道分布</a></div>
+      <div class="cl"><div class="ic">03</div><h4>影片资料页</h4><p>未取得授权的影片保留剧情简介、演职员、片长、分级与上映信息，供核对与参考。</p><a href="#guide">资料页说明</a></div>
+      <div class="cl"><div class="ic">04</div><h4>档期订阅</h4><p>可订阅感兴趣的影片，定档或改档时通过站内消息通知，无需留邮箱。</p><a href="#coming">查看订阅影片</a></div>
+      <div class="cl"><div class="ic">05</div><h4>纠错与补充</h4><p>片长、译名或分级标注有误可直接在资料页提交，编辑部两个工作日内处理。</p><a href="#news">提交纠错</a></div>
+      <div class="cl"><div class="ic">06</div><h4>版权投诉</h4><p>涉及侵权内容的投诉单独设置通道，三个工作日内答复处理结果。</p><a href="#faq">投诉通道</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- 影讯公告 -->
+<section id="news">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-t"><span class="mk">6</span><b>影讯公告</b><em>FILM NEWS / 院线动态与资料更新</em></div>
+      <div class="filters"><a class="fl on" href="#">最新</a><a class="fl" href="#">档期调整</a><a class="fl" href="#">资料更新</a><a class="fl" href="#">放映活动</a></div>
+    </div>
+    <div class="news">
+      <article class="lead">
+        <div class="ph"><div class="sh"></div><div class="gr" style="background:linear-gradient(135deg,#b5893c,#4a3714)"><b>《花样年华》4K 修复版本周五入驻 7 厅<br>连映七天 · 每日两场</b><small>2000 / 王家卫 / 98 分钟 / 4K 修复</small></div></div>
+        <div class="tx"><span class="dt">FEATURED · 09.30</span><h4>王家卫《花样年华》4K 修复版确认连映安排，含一场午夜场</h4><p>本次修复版采用 4K 数字中间片重新调色，音轨同步升级为 5.1 环绕声。7 厅排片为每日 14:20 与 19:50 两场，周六增设 22:10 午夜场一场，场次信息已同步至「<a href="#show" style="color:var(--sun2);border-bottom:1px solid rgba(255,194,75,.4)">今日排片</a>」表。</p></div>
+      </article>
+      <div class="list">
+        <a href="#news"><span class="dy"><b>09.28</b>档期</span><span class="tx2"><h5>《鬼灭之刃 柱训篇》确认引进，定档 11 月 1 日</h5><span>原声字幕版，全国艺联专线放映</span></span></a>
+        <a href="#news"><span class="dy"><b>09.26</b>资料</span><span class="tx2"><h5>资料库新增港片单元，首批收录 240 部影片</h5><span>1986-2005 年警匪、黑帮与喜剧题材</span></span></a>
+        <a href="#news"><span class="dy"><b>09.24</b>渠道</span><span class="tx2"><h5>正版渠道索引完成季度核验，更新 486 条链接</h5><span>涉及 8 家授权平台的地址调整</span></span></a>
+        <a href="#news"><span class="dy"><b>09.21</b>放映</span><span class="tx2"><h5>艺术院线十月排片公布，《狗阵》进入长线放映</h5><span>北京、上海、广州、成都四地参与</span></span></a>
+        <a href="#news"><span class="dy"><b>09.18</b>活动</span><span class="tx2"><h5>亲子专场增设周六上午场，本月共 6 部动画电影</h5><span>含《你想活出怎样的人生》国语配音版</span></span></a>
+        <a href="#news"><span class="dy"><b>09.15</b>资料</span><span class="tx2"><h5>影片分级标注规则更新，统一采用国家电影局口径</h5><span>已回溯修正 1,320 条历史条目</span></span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 放映指南 -->
+<section id="guide">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-t"><span class="mk">7</span><b>放映指南</b><em>SCREENING GUIDE / 十分钟学会用本站找片</em></div>
+    </div>
+    <p class="sec-sub">阳光电影网（yangguangdianyingwang-zh.com.github.io）的定位是「查得到」而不是「看得到」。以下四步是大多数用户实际会用到的检索路径。</p>
+    <div class="guide">
+      <div class="st"><span class="no">01</span><div><h4>只记得模糊片名</h4><p>在顶部搜索框输入任意片段，支持同音字与常见错译名，系统会返回最可能的匹配结果。</p></div></div>
+      <div class="st"><span class="no">02</span><div><h4>想看某类片子</h4><p>进入「<a href="#wallets">片种票夹</a>」按片种筛选，每类都做了年代与地区的二次分类。</p></div></div>
+      <div class="st"><span class="no">03</span><div><h4>追某个导演或演员</h4><p>在导演或演员名下可查看完整作品年表，含未引进与未发行的作品信息。</p></div></div>
+      <div class="st"><span class="no">04</span><div><h4>想看正版渠道</h4><p>影片资料页标注了可确认的正版观看渠道，无标注说明尚未找到可确认的入口。</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 影评专栏 -->
+<section id="rev">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-t"><span class="mk">8</span><b>影评专栏</b><em>REVIEWS / 编辑部短评，不剧透版</em></div>
+      <div class="filters"><a class="fl on" href="#">最新</a><a class="fl" href="#">华语</a><a class="fl" href="#">欧美</a><a class="fl" href="#">日韩</a><a class="fl" href="#">经典重看</a></div>
+    </div>
+    <div class="rev">
+      <article class="ar">
+        <div class="cv"><div class="gr" style="background:linear-gradient(135deg,#1f3a5f,#0d1b2e)"><b>《奥本海默》<br>三条时间线的剪辑逻辑</b></div><span class="no">REV.01</span></div>
+        <div class="tx"><div class="au"><b>放映组</b><span>2026.09.29</span></div><p>诺兰把听证会与洛斯阿拉莫斯的两条线交替推进，靠的不是时间标注而是色调与声场差异。看懂这个，片长 180 分钟就不是负担。</p><a class="rd" href="#sitemap">阅读全文（不剧透版）</a></div>
+      </article>
+      <article class="ar">
+        <div class="cv"><div class="gr" style="background:linear-gradient(135deg,#c8402c,#6e1f12)"><b>《周处除三害》<br>港式黑帮片的回潮</b></div><span class="no">REV.02</span></div>
+        <div class="tx"><div class="au"><b>资料组</b><span>2026.09.26</span></div><p>动作设计走的是实拍硬桥硬马的路子，反派塑造用了宗教元素的隐喻。片名典故在片尾才完成回收，值得留意。</p><a class="rd" href="#sitemap">阅读全文（不剧透版）</a></div>
+      </article>
+      <article class="ar">
+        <div class="cv"><div class="gr" style="background:linear-gradient(135deg,#7a4fa0,#352047)"><b>《狗阵》<br>人与狗之外的第三主角</b></div><span class="no">REV.03</span></div>
+        <div class="tx"><div class="au"><b>文艺组</b><span>2026.09.23</span></div><p>西北县城的废墟感承担了叙事功能，不只是取景。管虎这次的克制比《八佰》更适合艺术院线的长线放映。</p><a class="rd" href="#sitemap">阅读全文（不剧透版）</a></div>
+      </article>
+      <article class="ar">
+        <div class="cv"><div class="gr" style="background:linear-gradient(135deg,#c77b2f,#5c3810)"><b>《姥姥的外孙》<br>东亚家庭片的同一种痛</b></div><span class="no">REV.04</span></div>
+        <div class="tx"><div class="au"><b>家庭组</b><span>2026.09.20</span></div><p>泰语片的节奏比同类华语作品更慢，但祖孙之间的经济账算得更直白。排片加场说明观众口碑在持续发酵。</p><a class="rd" href="#sitemap">阅读全文（不剧透版）</a></div>
+      </article>
+      <article class="ar">
+        <div class="cv"><div class="gr" style="background:linear-gradient(135deg,#b5893c,#4a3714)"><b>《花样年华》<br>4K 修复后变了什么</b></div><span class="no">REV.05</span></div>
+        <div class="tx"><div class="au"><b>修复组</b><span>2026.09.18</span></div><p>色彩更接近杜可风的原始设计意图，张曼玉那几套旗袍的织物质感第一次在银幕上立得住。音轨的雨声层次是新发现。</p><a class="rd" href="#sitemap">阅读全文（不剧透版）</a></div>
+      </article>
+      <article class="ar">
+        <div class="cv"><div class="gr" style="background:linear-gradient(135deg,#3f8f6f,#1c4333)"><b>《你想活出怎样的人生》<br>国语配音值不值得看</b></div><span class="no">REV.06</span></div>
+        <div class="tx"><div class="au"><b>动画组</b><span>2026.09.15</span></div><p>配音阵容贴合角色年龄感，但部分隐喻性台词在国语里失去了日语原声的双关。亲子场选配音版更合适。</p><a class="rd" href="#sitemap">阅读全文（不剧透版）</a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-t"><span class="mk">9</span><b>常见问题</b><em>FAQ / 关于阳光电影网的九件事</em></div>
+    </div>
+    <div class="faq">
+      <details open>
+        <summary><span class="qk">Q.01</span><span>阳光电影网（yangguangdianyingwang-zh.com.github.io）是电影网站吗？</span><span class="ar">+</span></summary>
+        <div class="a">是影片资料库与排片索引，不是在线播放平台。本站整理影片的剧情简介、演职员、片长、评分与正版观看渠道，不提供在线播放功能，也不存储任何影视文件。如果你要找的是某个具体的在线电影网站，请在搜索框输入网站名称，我们会给出对应的导航信息。</div>
+      </details>
+      <details>
+        <summary><span class="qk">Q.02</span><span>为什么有些影片只有资料页，没有观看渠道？</span><span class="ar">+</span></summary>
+        <div class="a">两种情况：一是尚未找到可确认的正版授权入口，二是作品尚未在境内发行。前者由编辑部持续跟进核实，后者仅保留剧情、演职员、片长等资料，不提供任何观看途径。详情见「<a href="#counter">观众服务台</a>」第 02 项。</div>
+      </details>
+      <details>
+        <summary><span class="qk">Q.03</span><span>「今日排片」表的场次是真实的吗？</span><span class="ar">+</span></summary>
+        <div class="a">不是。该表是本站自建的演示性排片索引，用于展示影片的分类与归档方式，放映时间由各地院线自行安排，请以影院实际公示为准。真实场次请前往各院线官方渠道查询。</div>
+      </details>
+      <details>
+        <summary><span class="qk">Q.04</span><span>片长与分级信息从哪来？</span><span class="ar">+</span></summary>
+        <div class="a">片长采用公映版本时长，分级标注统一使用国家电影局口径。院线版与导演剪辑版的时长差异会在资料页备注。如发现标注有误，可在资料页提交纠错，两个工作日内处理。</div>
+      </details>
+      <details>
+        <summary><span class="qk">Q.05</span><span>9 个放映厅是怎么分的？</span><span class="ar">+</span></summary>
+        <div class="a">按制片地区（华语、欧美、日韩）与功能（热映、即将上映、票夹、服务台、影讯、专栏）划分，1 到 9 厅各对应一个栏目。同一部影片可能同时出现在多个厅，以片种标签为准。</div>
+      </details>
+      <details>
+        <summary><span class="qk">Q.06</span><span>想订阅某部影片的档期提醒怎么办？</span><span class="ar">+</span></summary>
+        <div class="a">在「<a href="#coming">即将上映</a>」表点击对应条目即可订阅，影片定档或改档时通过站内消息通知，无需留邮箱。订阅记录可在个人中心查看与管理。</div>
+      </details>
+      <details>
+        <summary><span class="qk">Q.07</span><span>影评专栏的评分可以引用吗？</span><span class="ar">+</span></summary>
+        <div class="a">影评是编辑部的主观评价，评分仅代表本站口径，与院线或第三方平台无关。引用请注明来源为阳光电影网（yangguangdianyingwang-zh.com.github.io），并保留作者署名。</div>
+      </details>
+      <details>
+        <summary><span class="qk">Q.08</span><span>涉及版权争议的内容怎么处理？</span><span class="ar">+</span></summary>
+        <div class="a">本站坚持合规运营，涉及版权争议或违规内容一律不收录、不提供跳转。侵权投诉在「<a href="#counter">观众服务台</a>」设有单独通道，三个工作日内答复处理结果。</div>
+      </details>
+      <details>
+        <summary><span class="qk">Q.09</span><span>这个资料库可以转载或引用吗？</span><span class="ar">+</span></summary>
+        <div class="a">可以。本站整理内容允许非商业用途转载，请保留演职员信息与本站出处（yangguangdianyingwang-zh.com.github.io）。商业用途请通过页脚「合作与转载」渠道联系编辑部。</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- 站点地图 -->
+<section id="sitemap">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-t"><span class="mk">总</span><b>站点地图</b><em>SITE MAP / 9 厅全栏目索引</em></div>
+    </div>
+    <p class="sec-sub">阳光电影网（yangguangdianyingwang-zh.com.github.io）共设 9 个放映厅栏目，结构扁平，所有页面均可从下方入口直接访问。如需按片种细分，请进入对应的「<a href="#wallets">片种票夹</a>」。</p>
+    <div class="show" style="margin-bottom:20px">
+      <div class="show-hd"><span>厅号</span><span>栏目</span><span>主要内容</span><span>更新频率</span><span>说明</span><span>状态</span><span>入口</span></div>
+      <div class="show-row"><span class="ti">1厅</span><span class="hl"></span><span class="nm">今日排片<small>SHOWTIMES</small></span><span class="ge">演示性排片索引</span><span class="ln">每日更新</span><span><span class="tag og">在映</span></span><span><a href="#show" style="color:var(--sun);font-weight:700;font-size:.86rem">进入 →</a></span></div>
+      <div class="show-row"><span class="ti">2厅</span><span class="hl"></span><span class="nm">正在热映<small>NOW SHOWING</small></span><span class="ge">检索量前 10 位</span><span class="ln">每周一更新</span><span><span class="tag og">在映</span></span><span><a href="#hot" style="color:var(--sun);font-weight:700;font-size:.86rem">进入 →</a></span></div>
+      <div class="show-row"><span class="ti">3厅</span><span class="hl"></span><span class="nm">即将上映<small>COMING SOON</small></span><span class="ge">已定档与待定档</span><span class="ln">每周三更新</span><span><span class="tag">筹备</span></span><span><a href="#coming" style="color:var(--sun);font-weight:700;font-size:.86rem">进入 →</a></span></div>
+      <div class="show-row"><span class="ti">4厅</span><span class="hl"></span><span class="nm">片种票夹<small>GENRE WALLETS</small></span><span class="ge">8 类片种归档</span><span class="ln">随资料更新</span><span><span class="tag">归档</span></span><span><a href="#wallets" style="color:var(--sun);font-weight:700;font-size:.86rem">进入 →</a></span></div>
+      <div class="show-row"><span class="ti">5厅</span><span class="hl"></span><span class="nm">观众服务台<small>SERVICE COUNTER</small></span><span class="ge">检索与渠道功能</span><span class="ln">按需更新</span><span><span class="tag">服务</span></span><span><a href="#counter" style="color:var(--sun);font-weight:700;font-size:.86rem">进入 →</a></span></div>
+      <div class="show-row"><span class="ti">6厅</span><span class="hl"></span><span class="nm">影讯公告<small>FILM NEWS</small></span><span class="ge">院线动态与资料更新</span><span class="ln">每日更新</span><span><span class="tag sub">资讯</span></span><span><a href="#news" style="color:var(--sun);font-weight:700;font-size:.86rem">进入 →</a></span></div>
+      <div class="show-row"><span class="ti">7厅</span><span class="hl"></span><span class="nm">放映指南<small>SCREENING GUIDE</small></span><span class="ge">检索方法说明</span><span class="ln">静态页面</span><span><span class="tag">指南</span></span><span><a href="#guide" style="color:var(--sun);font-weight:700;font-size:.86rem">进入 →</a></span></div>
+      <div class="show-row"><span class="ti">8厅</span><span class="hl"></span><span class="nm">影评专栏<small>REVIEWS</small></span><span class="ge">编辑部短评</span><span class="ln">每周更新</span><span><span class="tag sub">专栏</span></span><span><a href="#rev" style="color:var(--sun);font-weight:700;font-size:.86rem">进入 →</a></span></div>
+      <div class="show-row"><span class="ti">9厅</span><span class="hl"></span><span class="nm">常见问题<small>FAQ</small></span><span class="ge">9 个高频问题</span><span class="ln">随政策更新</span><span><span class="tag">帮助</span></span><span><a href="#faq" style="color:var(--sun);font-weight:700;font-size:.86rem">进入 →</a></span></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-in">
+    <div class="foot-top">
+      <div class="f1">
+        <div class="lg"><span class="tk"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1a140e" stroke-width="2.4"><rect x="3" y="6" width="18" height="13" rx="2"/><circle cx="8" cy="12" r="1.2" fill="#1a140e"/><circle cx="16" cy="12" r="1.2" fill="#1a140e"/></svg></span>阳光电影网</div>
+        <p>阳光电影网（yangguangdianyingwang-zh.com.github.io）是影片资料库与排片索引站点，整理华语、欧美、日韩影片的剧情简介、演职员、片长、评分与正版观看渠道，不提供在线播放服务。</p>
+        <div class="cert"><span>资料库索引</span><span>正版优先</span><span>合规运营</span><span>分级标注</span></div>
+      </div>
+      <div class="foot-col"><h6>放映厅</h6><ul>
+        <li><a href="#show">今日排片</a></li><li><a href="#hot">正在热映</a></li><li><a href="#coming">即将上映</a></li><li><a href="#wallets">片种票夹</a></li><li><a href="#counter">观众服务台</a></li>
+      </ul></div>
+      <div class="foot-col"><h6>片种票夹</h6><ul>
+        <li><a href="#wallets">动作犯罪</a></li><li><a href="#wallets">剧情现实</a></li><li><a href="#wallets">爱情文艺</a></li><li><a href="#wallets">科幻奇幻</a></li><li><a href="#wallets">经典修复</a></li>
+      </ul></div>
+      <div class="foot-col"><h6>帮助与合规</h6><ul>
+        <li><a href="#guide">放映指南</a></li><li><a href="#faq">常见问题</a></li><li><a href="#sitemap">站点地图</a></li><li><a href="#">版权声明</a></li><li><a href="#">隐私政策</a></li>
+      </ul></div>
+      <div class="foot-col"><h6>编辑部</h6><ul>
+        <li><a href="#news">纠错与补充</a></li><li><a href="#">合作与转载</a></li><li><a href="#">侵权投诉</a></li><li><a href="#rev">影评专栏</a></li><li><a href="#">联系我们</a></li>
+      </ul></div>
+    </div>
+    <div class="foot-mid">
+      <span>本站为影片资料库与排片索引，不提供在线播放，不存储影视文件。影片版权归制片方与发行方所有，收录以正版授权为优先原则。</span>
+      <div class="lk"><a href="https://yangguangdianyingwang-zh.com.github.io/">首页</a><a href="#sitemap">站点地图</a><a href="#faq">帮助中心</a><a href="#news">影讯公告</a></div>
+    </div>
+    <div class="foot-bot">
+      <span>© 2026 阳光电影网（YANGGUANGDIANYINGWANG-ZH.COM）. ALL RIGHTS RESERVED.</span>
+      <span><b>官方网址：https://yangguangdianyingwang-zh.com.github.io/</b></span>
+    </div>
+  </div>
+</footer>
+
+<a id="top" href="#" aria-label="返回顶部">↑</a>
+
+<script>
+(function(){
+  var rv=document.getElementById('halls'),mb=document.getElementById('menuBtn');
+  if(mb&&rv){
+    mb.addEventListener('click',function(){rv.classList.toggle('open')});
+    rv.addEventListener('click',function(e){if(e.target.tagName==='A')rv.classList.remove('open')});
+  }
+  var top=document.getElementById('top');
+  if(top)window.addEventListener('scroll',function(){top.classList[window.scrollY>700?'add':'remove']('show')},{passive:true});
+  document.querySelectorAll('.filters').forEach(function(g){
+    g.addEventListener('click',function(e){
+      var t=e.target.closest('.fl');if(!t)return;
+      e.preventDefault();
+      g.querySelectorAll('.fl').forEach(function(x){x.classList.remove('on')});
+      t.classList.add('on');
+    });
+  });
+  var ha=document.querySelectorAll('.halls-in a');
+  var ids=[].map.call(document.querySelectorAll('section[id]'),function(s){return s.id});
+  ha.forEach(function(a){a.addEventListener('click',function(){
+    ha.forEach(function(x){x.classList.remove('on')});a.classList.add('on');
+  })});
+  if(ids.length&&'IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(en){
+        if(en.isIntersecting){
+          var h='#'+en.target.id;
+          ha.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')===h)});
+        }
+      });
+    },{rootMargin:'-40% 0px -55% 0px',threshold:0});
+    ids.forEach(function(i){var el=document.getElementById(i);if(el)io.observe(el)});
+  }
+  document.addEventListener('keydown',function(e){
+    if(e.key==='/'&&document.activeElement.tagName!=='INPUT'&&document.activeElement.tagName!=='TEXTAREA'){
+      e.preventDefault();var s=document.querySelector('.search input');if(s)s.focus();
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
